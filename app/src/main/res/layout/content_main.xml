@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <com.wmz.test.view.BubbleView
+        android:id="@+id/bubbleView"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="300dp" />
+
+
+    <com.wmz.test.view.BubbleView2
+        android:id="@+id/bubbleView2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:layout_below="@+id/bubbleView"/>
+
+    <com.wmz.test.view.BubbleView3
+        android:id="@+id/bubbleView3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bubbleView2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <com.wmz.test.view.BubbleView4
+        android:id="@+id/bubbleView4"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bubbleView3"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <RelativeLayout
+        android:id="@+id/bt_layout"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="In" />
+
+        <Button
+            android:id="@+id/out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Out" />
+    </RelativeLayout>
+</RelativeLayout>

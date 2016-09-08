@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response method="getIndextype">
+<data ver="1.707">
+    <type ID="1" name="movie" cname="电影">
+        <subtype name="推荐" keys="tags">
+            <s_subtype>热门</s_subtype>
+            <s_subtype>最新</s_subtype>
+            <s_subtype>好莱坞</s_subtype>
+            <s_subtype>华语院线</s_subtype>
+            <s_subtype>港产片</s_subtype>
+            <s_subtype>欧美电影</s_subtype>
+            <s_subtype>日韩电影</s_subtype>
+            <s_subtype>其他电影</s_subtype>
+        </subtype>
+        <subtype name="地区" keys="area">
+            <s_subtype>内地</s_subtype>
+            <s_subtype>美国</s_subtype>
+            <s_subtype>香港</s_subtype>
+            <s_subtype>台湾</s_subtype>
+            <s_subtype>韩国</s_subtype>
+            <s_subtype>日本</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="year">
+            <s_subtype>2016</s_subtype>
+            <s_subtype>2015</s_subtype>
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+            <s_subtype>2009</s_subtype>
+            <s_subtype>2008</s_subtype>
+            <s_subtype>2007</s_subtype>
+            <s_subtype>2006</s_subtype>
+            <s_subtype>2005</s_subtype>
+            <s_subtype>2004</s_subtype>
+        </subtype>
+        <subtype name="类型" keys="tags">
+            <s_subtype>爱情</s_subtype>
+            <s_subtype>剧情</s_subtype>
+            <s_subtype>悬疑</s_subtype>
+            <s_subtype>喜剧</s_subtype>
+            <s_subtype>动作</s_subtype>
+            <s_subtype>犯罪</s_subtype>
+            <s_subtype>惊悚</s_subtype>
+            <s_subtype>科幻</s_subtype>
+            <s_subtype>战争</s_subtype>
+            <s_subtype>伦理</s_subtype>
+            <s_subtype>家庭</s_subtype>
+        </subtype>
+    </type>
+    <type ID="2" name="program" cname="电视剧">
+        <subtype name="推荐" keys="tags">
+            <s_subtype>热门</s_subtype>
+            <s_subtype>最新</s_subtype>
+            <s_subtype>国语剧场</s_subtype>
+            <s_subtype>粤语剧场</s_subtype>
+            <s_subtype>日韩剧场</s_subtype>
+            <s_subtype>欧美剧场</s_subtype>
+        </subtype>
+        <subtype name="地区" keys="area">
+            <s_subtype>内地</s_subtype>
+            <s_subtype>香港</s_subtype>
+            <s_subtype>台湾</s_subtype>
+            <s_subtype>韩国</s_subtype>
+            <s_subtype>美国</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="year">
+            <s_subtype>2016</s_subtype>
+            <s_subtype>2015</s_subtype>
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+            <s_subtype>2009</s_subtype>
+            <s_subtype>2008</s_subtype>
+            <s_subtype>2007</s_subtype>
+            <s_subtype>2006</s_subtype>
+            <s_subtype>2005</s_subtype>
+            <s_subtype>2004</s_subtype>
+        </subtype>
+        <subtype name="类型" keys="tags">
+            <s_subtype>爱情</s_subtype>
+            <s_subtype>武侠</s_subtype>
+            <s_subtype>古装</s_subtype>
+            <s_subtype>都市</s_subtype>
+            <s_subtype>战争</s_subtype>
+            <s_subtype>历史</s_subtype>
+            <s_subtype>喜剧</s_subtype>
+            <s_subtype>家庭</s_subtype>
+            <s_subtype>剧情</s_subtype>
+            <s_subtype>偶像</s_subtype>
+            <s_subtype>情景</s_subtype>
+        </subtype>
+    </type>
+    <type ID="3" name="animation" cname="动漫">
+        <subtype name="推荐" keys="tags">
+            <s_subtype>热门</s_subtype>
+            <s_subtype>最新</s_subtype>
+            <s_subtype>幼儿教育</s_subtype>
+            <s_subtype>儿歌</s_subtype>
+            <s_subtype>童话故事</s_subtype>
+        </subtype>
+        <subtype name="类型" keys="tags">
+            <s_subtype>热门</s_subtype>
+            <s_subtype>休闲</s_subtype>
+            <s_subtype>少儿</s_subtype>
+            <s_subtype>竞技</s_subtype>
+            <s_subtype>战队</s_subtype>
+            <s_subtype>女生</s_subtype>
+            <s_subtype>热血</s_subtype>
+            <s_subtype>校园</s_subtype>
+            <s_subtype>机战</s_subtype>
+            <s_subtype>情感</s_subtype>
+            <s_subtype>萝莉</s_subtype>
+            <s_subtype>冒险</s_subtype>
+            <s_subtype>魔法</s_subtype>
+            <s_subtype>推理</s_subtype>
+            <s_subtype>超人</s_subtype>
+        </subtype>
+        <subtype name="地区" keys="area">
+            <s_subtype>日本</s_subtype>
+            <s_subtype>中国</s_subtype>
+            <s_subtype>美国</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="year">
+            <s_subtype>2016</s_subtype>
+            <s_subtype>2015</s_subtype>
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+            <s_subtype>2009</s_subtype>
+            <s_subtype>2008</s_subtype>
+            <s_subtype>2007</s_subtype>
+            <s_subtype>2006</s_subtype>
+            <s_subtype>2005</s_subtype>
+            <s_subtype>2004</s_subtype>
+        </subtype>
+    </type>
+    <type ID="4" name="arts" cname="综艺">
+        <subtype name="推荐" keys="tags">
+            <s_subtype>热门</s_subtype>
+            <s_subtype>最新</s_subtype>
+            <s_subtype>内地</s_subtype>
+            <s_subtype>港台</s_subtype>
+            <s_subtype>日韩</s_subtype>
+            <s_subtype>欧美</s_subtype>
+        </subtype>
+        <subtype name="类型" keys="tags">
+            <s_subtype>选秀</s_subtype>
+            <s_subtype>情感</s_subtype>
+            <s_subtype>访谈</s_subtype>
+            <s_subtype>音乐</s_subtype>
+            <s_subtype>美食</s_subtype>
+            <s_subtype>纪实</s_subtype>
+            <s_subtype>生活</s_subtype>
+            <s_subtype> 财经</s_subtype>
+            <s_subtype>求职</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="year">
+            <s_subtype>2016</s_subtype>
+            <s_subtype>2015</s_subtype>
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+            <s_subtype>2009</s_subtype>
+            <s_subtype>2008</s_subtype>
+            <s_subtype>2007</s_subtype>
+            <s_subtype>2006</s_subtype>
+            <s_subtype>2005</s_subtype>
+        </subtype>
+    </type>
+    <type ID="5" name="documentary" cname="记录片">
+        <subtype name="类型" keys="tags">
+            <s_subtype>探索</s_subtype>
+            <s_subtype>人物</s_subtype>
+            <s_subtype>历史</s_subtype>
+            <s_subtype>自然</s_subtype>
+            <s_subtype>军事</s_subtype>
+            <s_subtype>社会</s_subtype>
+        </subtype>
+        <subtype name="地区" keys="area">
+            <s_subtype>美国</s_subtype>
+            <s_subtype>大陆</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="year">
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+            <s_subtype>2009</s_subtype>
+        </subtype>
+    </type>
+    <type ID="6" name="mv" cname="MTV">
+        <subtype name="地区" keys="tags">
+            <s_subtype>内地</s_subtype>
+            <s_subtype>港台</s_subtype>
+            <s_subtype>日韩</s_subtype>
+            <s_subtype>欧美</s_subtype>
+            <s_subtype>其他</s_subtype>
+        </subtype>
+        <subtype name="年份" keys="tags">
+            <s_subtype>2014</s_subtype>
+            <s_subtype>2013</s_subtype>
+            <s_subtype>2012</s_subtype>
+            <s_subtype>2011</s_subtype>
+            <s_subtype>2010</s_subtype>
+        </subtype>
+        <subtype name="语言" keys="tags">
+            <s_subtype>普通话</s_subtype>
+            <s_subtype>粤语</s_subtype>
+            <s_subtype>英语</s_subtype>
+            <s_subtype>日语</s_subtype>
+            <s_subtype>韩语</s_subtype>
+        </subtype>
+        <subtype name="风格" keys="tags">
+            <s_subtype>流行</s_subtype>
+            <s_subtype>舞曲</s_subtype>
+            <s_subtype>摇滚</s_subtype>
+            <s_subtype>说唱</s_subtype>
+            <s_subtype>电音</s_subtype>
+            <s_subtype>古典</s_subtype>
+            <s_subtype>民歌</s_subtype>
+            <s_subtype>爵士</s_subtype>
+            <s_subtype>金属</s_subtype>
+        </subtype>
+    </type>
+    <type ID="7" name="other" cname="综合">
+        <subtype name="公开课" keys="tags">
+            <s_subtype>公开课</s_subtype>
+            <s_subtype>数学</s_subtype>
+            <s_subtype>文学</s_subtype>
+            <s_subtype>哲学</s_subtype>
+            <s_subtype>社会</s_subtype>
+            <s_subtype>TED</s_subtype>
+            <s_subtype>心理</s_subtype>
+            <s_subtype>伦理</s_subtype>
+        </subtype>
+        <subtype name="足球" keys="tags">
+            <s_subtype>足球</s_subtype>
+            <s_subtype>欧冠</s_subtype>
+            <s_subtype>西甲</s_subtype>
+            <s_subtype>德甲</s_subtype>
+            <s_subtype>意甲</s_subtype>
+            <s_subtype>世界杯</s_subtype>
+            <s_subtype>亚冠</s_subtype>
+            <s_subtype>中超</s_subtype>
+        </subtype>
+        <subtype name="NBA" keys="tags">
+            <s_subtype>NBA</s_subtype>
+        </subtype>
+        <subtype name="NBA精选" keys="albumName">
+            <s_subtype>湖人</s_subtype>
+            <s_subtype>火箭</s_subtype>
+            <s_subtype>热火</s_subtype>
+            <s_subtype>雷霆</s_subtype>
+            <s_subtype>马刺</s_subtype>
+            <s_subtype>尼克斯</s_subtype>
+            <s_subtype>快船</s_subtype>
+            <s_subtype>凯尔特人</s_subtype>
+        </subtype>
+    </type>
+</data>
+</response>
