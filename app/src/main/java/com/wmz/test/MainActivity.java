@@ -1,82 +1,133 @@
 package com.wmz.test;
 
+import android.app.ListActivity;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-import com.wmz.test.view.BubbleView2;
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import java.util.Random;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private BubbleView2 BubbleView2;
-    private Button btnIn, btnOut;
+public class MainActivity extends ListActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
 
-        btnIn = (Button) findViewById(R.id.in);
-        btnOut = (Button) findViewById(R.id.out);
-        btnIn.setOnClickListener(this);
-        btnOut.setOnClickListener(this);
-        BubbleView2 = (BubbleView2) findViewById(R.id.bubbleView2);
-        BubbleView2.setDuration(800l);
-        BubbleView2.setOnItemClickListener(this);
-        // 添加
-        feedBubbleView2(BubbleView2, keywords);
-        BubbleView2.go2Show(BubbleView2.ANIMATION_IN);
+        Intent intent = getIntent();
+        String path = intent.getStringExtra("com.wmz.demo_w1.Path");
+
+        if (path == null) {
+            path = "";
+        }
+
+        setListAdapter(new SimpleAdapter(this, getData(path),
+                android.R.layout.simple_list_item_1, new String[] { "title" },
+                new int[] { android.R.id.text1 }));
+        getListView().setTextFilterEnabled(true);
     }
 
-    public String[] keywords = {
-            "QQ", "Sodino", "APK", "GFW", "铅笔",
-            "短信", "桌面精灵", "MacBook Pro", "平板电脑", "雅诗兰黛",
-            "卡西欧 TR-100", "笔记本", "SPY Mouse", "Thinkpad E40", "捕鱼达人",
-            "内存清理", "地图", "导航", "闹钟", "主题",
-            "通讯录", "播放器", "CSDN leak", "安全", "3D",
-            "美女", "天气", "4743G", "戴尔", "联想",
-            "欧朋", "浏览器", "愤怒的小鸟", "mmShow", "网易公开课",
-            "iciba", "油水关系", "网游App", "互联网", "365日历",
-            "脸部识别", "Chrome", "Safari", "中国版Siri", "A5处理器",
-            "iPhone4S", "摩托 ME525", "魅族 M9", "尼康 S2500"
-    };
+    protected List<Map<String, Object>> getData(String prefix) {
+        List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
 
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory("LIST");
 
-    private static void feedBubbleView2(BubbleView2 BubbleView2, String[] arr) {
-        Random random = new Random();
-        for (int i = 0; i < BubbleView2.MAX; i++) {
-            int ran = random.nextInt(arr.length);
-            String tmp = arr[ran];
-            BubbleView2.feedKeyword(tmp);
+        PackageManager pm = getPackageManager();
+        List<ResolveInfo> list = pm.queryIntentActivities(mainIntent, 0);
+
+        if (null == list)
+            return myData;
+
+        String[] prefixPath;
+        String prefixWithSlash = prefix;
+
+        if (prefix.equals("")) {
+            prefixPath = null;
+        } else {
+            prefixPath = prefix.split("/");
+            prefixWithSlash = prefix + "/";
         }
+
+        int len = list.size();
+
+        Map<String, Boolean> entries = new HashMap<String, Boolean>();
+
+        for (int i = 0; i < len; i++) {
+            ResolveInfo info = list.get(i);
+            CharSequence labelSeq = info.loadLabel(pm);
+            String label = labelSeq != null
+                    ? labelSeq.toString()
+                    : info.activityInfo.name;
+
+            if (prefixWithSlash.length() == 0 || label.startsWith(prefixWithSlash)) {
+
+                String[] labelPath = label.split("/");
+
+                String nextLabel = prefixPath == null ? labelPath[0] : labelPath[prefixPath.length];
+
+                if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
+                    addItem(myData, nextLabel, activityIntent(
+                            info.activityInfo.applicationInfo.packageName,
+                            info.activityInfo.name));
+                } else {
+                    if (entries.get(nextLabel) == null) {
+                        addItem(myData, nextLabel, browseIntent(prefix.equals("") ? nextLabel : prefix + "/" + nextLabel));
+                        entries.put(nextLabel, true);
+                    }
+                }
+            }
+        }
+
+        Collections.sort(myData, sDisplayNameComparator);
+
+        return myData;
+    }
+
+    private final static Comparator<Map<String, Object>> sDisplayNameComparator =
+            new Comparator<Map<String, Object>>() {
+                private final Collator collator = Collator.getInstance();
+
+                public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+                    return collator.compare(map1.get("title"), map2.get("title"));
+                }
+            };
+
+    protected Intent activityIntent(String pkg, String componentName) {
+        Intent result = new Intent();
+        result.setClassName(pkg, componentName);
+        return result;
+    }
+
+    protected Intent browseIntent(String path) {
+        Intent result = new Intent();
+        result.setClass(this, MainActivity.class);
+        result.putExtra("com.wmz.demo_w1.Path", path);
+        return result;
+    }
+
+    protected void addItem(List<Map<String, Object>> data, String name, Intent intent) {
+        Map<String, Object> temp = new HashMap<String, Object>();
+        temp.put("title", name);
+        temp.put("intent", intent);
+        data.add(temp);
     }
 
     @Override
-    public void onClick(View v) {
-        // TODO Auto-generated method stub
-        if (v == btnIn) {
-            BubbleView2.rubKeywords();
-            // BubbleView2.rubAllViews();
-            feedBubbleView2(BubbleView2, keywords);
-            BubbleView2.go2Show(BubbleView2.ANIMATION_IN);
-        } else if (v == btnOut) {
-            BubbleView2.rubKeywords();
-            // BubbleView2.rubAllViews();
-            feedBubbleView2(BubbleView2, keywords);
-            BubbleView2.go2Show(BubbleView2.ANIMATION_OUT);
-        } else if (v instanceof TextView) {
-            String keyword = ((TextView) v).getText().toString();
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            intent.setData(Uri.parse("http://www.google.com.hk/#q=" + keyword));
-            startActivity(intent);
-        }
-    }
+    @SuppressWarnings("unchecked")
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
 
+        Intent intent = (Intent) map.get("intent");
+        startActivity(intent);
+    }
 }

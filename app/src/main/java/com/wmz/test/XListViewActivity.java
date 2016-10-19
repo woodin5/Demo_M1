@@ -27,8 +27,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestActivity extends AppCompatActivity implements View.OnClickListener {
-    private Context mContext = TestActivity.this;
+public class XListViewActivity extends AppCompatActivity implements View.OnClickListener {
+    private Context mContext = XListViewActivity.this;
     private LinearLayout layout;
     private TextView mTvShow;
     private Button mBtn;

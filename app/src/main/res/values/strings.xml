@@ -9,4 +9,8 @@
     <string name="div_operation_text">Div</string>
     <string name="mul_operation_text">Mul</string>
     <string name="computationError">Error</string>
+    <string name="no_data">no data</string>
+
+    <string name="XListView">XListView</string>
+    <string name="Animation">Animation</string>
 </resources>

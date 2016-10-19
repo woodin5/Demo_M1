@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.wmz.test.AnimActivity">
+
+    <com.wmz.test.view.CircleProgressLayout
+        android:id="@+id/circleLayout"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerInParent="true">
+    </com.wmz.test.view.CircleProgressLayout>
+
+    <com.wmz.test.view.SportBarChart
+        android:id="@+id/sportBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_centerInParent="true"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:barColor="@android:color/holo_red_light"
+        app:drawable="@mipmap/ic_sport_man_small" />
+
+
+</RelativeLayout>

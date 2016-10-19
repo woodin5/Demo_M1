@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SportBarChart">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="barColor" format="color" />
+        <attr name="drawable" format="reference" />
+    </declare-styleable>
+</resources>
