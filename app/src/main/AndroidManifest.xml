@@ -34,12 +34,38 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnimActivity"
+        <activity
+            android:name=".AnimActivity"
             android:label="@string/Animation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListItemOperateActivity"
+            android:label="@string/ListItemOperate">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RedDotActivity"
+            android:label="@string/RedDot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="LIST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SuperTextViewActivity"
+            android:label="@string/SuperTextView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="LIST"/>
             </intent-filter>
         </activity>
     </application>

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wmz.test"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -34,4 +34,23 @@ dependencies {
     //    androidTestCompile 'com.android.support.test:rules:0.2'
     //    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.1'
     compile project(':library')
+    compile 'com.allen.supertextview:supertextview:+'
 }
+
+//butterknife 添加
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+
+dependencies {
+    compile 'com.jakewharton:butterknife:+'
+    apt 'com.jakewharton:butterknife-compiler:+'
+}
+

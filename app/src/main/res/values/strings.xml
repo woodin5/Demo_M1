@@ -13,4 +13,7 @@
 
     <string name="XListView">XListView</string>
     <string name="Animation">Animation</string>
+    <string name="ListItemOperate">ListItemOperate</string>
+    <string name="RedDot">RedDot</string>
+    <string name="SuperTextView">SuperTextView</string>
 </resources>
