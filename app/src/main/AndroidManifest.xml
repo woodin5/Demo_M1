@@ -61,8 +61,8 @@
                 <category android:name="LIST" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SuperTextViewActivity"
-            android:label="@string/SuperTextView">
+        <activity android:name=".activity.PickerActivity"
+            android:label="@string/Picker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="LIST"/>

@@ -16,4 +16,5 @@
     <string name="ListItemOperate">ListItemOperate</string>
     <string name="RedDot">RedDot</string>
     <string name="SuperTextView">SuperTextView</string>
+    <string name="Picker">Picker</string>
 </resources>
